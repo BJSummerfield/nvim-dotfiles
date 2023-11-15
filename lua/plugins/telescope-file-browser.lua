@@ -14,18 +14,32 @@ return {
       { noremap = true }
 
     )
-    -- You don't need to set any of these options.
-    -- IMPORTANT!: this is only a showcase of how you can set default options!
+    vim.api.nvim_set_keymap(
+      "n",
+      "<leader>E",
+      ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+      { noremap = true }
+    )
+
+    local fb_actions = require "telescope".extensions.file_browser.actions
+
     require("telescope").setup {
       extensions = {
         file_browser = {
-          -- disables netrw and use telescope-file-browser in its place
           hijack_netrw = true,
+          mappings = {
+            ["i"] = {
+              ["<C-a>"] = fb_actions.create,
+              ["<C-d>"] = fb_actions.remove,
+            },
+            ["n"] = {
+              ["<C-a>"] = fb_actions.create,
+              ["<C-d>"] = fb_actions.remove,
+            },
+          },
         },
       },
     }
-    -- To get telescope-file-browser loaded and working with telescope,
-    -- you need to call load_extension, somewhere after setup function:
     require("telescope").load_extension "file_browser"
   end
 }
