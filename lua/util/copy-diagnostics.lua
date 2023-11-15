@@ -9,4 +9,4 @@ local function copy_diagnostic_to_clipboard()
   end
 end
 
-vim.keymap.set('n', '<leader>c', copy_diagnostic_to_clipboard, { desc = 'Copy diagnostic message to clipboard' })
+vim.keymap.set('n', '<leader>dc', copy_diagnostic_to_clipboard, { desc = 'Copy diagnostic message to clipboard' })
