@@ -32,5 +32,10 @@ return {
     vim.keymap.set('n', '<leader>?', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>t', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>ds', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+    vim.keymap.set('n', '<leader>sf', function()
+      require('telescope.builtin').find_files({
+        hidden = true, no_ignore = true
+      })
+    end, { desc = '[S]earch Hidden [F]iles' })
   end
 }
