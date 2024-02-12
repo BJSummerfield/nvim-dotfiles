@@ -53,7 +53,7 @@ local servers = {
     }
   },
   tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
   lemminx = {
     -- xml = {
     --   server = {
