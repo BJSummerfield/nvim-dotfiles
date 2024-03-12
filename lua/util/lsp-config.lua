@@ -43,7 +43,7 @@ require('mason-lspconfig').setup()
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   rust_analyzer = {
     cmd = {
       "rustup",
@@ -54,19 +54,15 @@ local servers = {
   },
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-  lemminx = {
-    -- xml = {
-    --   server = {
-    --     workDir = "~/.cache/lemminx",
-    --   }
-    -- }
-  },
+  lemminx = {},
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
+  bicep = {},
+  graphql = {},
 }
 
 -- Setup neovim lua configuration
