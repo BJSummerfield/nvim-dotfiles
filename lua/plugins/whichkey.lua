@@ -1,8 +1,13 @@
-return { -- Useful plugin to show you pending keybinds.
+return {
   'folke/which-key.nvim',
-  event = 'VeryLazy', -- Sets the loading event to 'VimEnter'
-  config = function() -- This is the function that runs, AFTER loading
-    require('which-key').setup()
+  event = 'VeryLazy',
+  config = function()
+    require('which-key').setup {
+      triggers = {
+        { '<auto>', mode = 'nixsotc' },
+        { 's', mode = { 'n', 'v' } },
+      },
+    }
     require('which-key').add {
       { '<leader>d', group = '[D]ocument' },
       { '<leader>d_', hidden = true },

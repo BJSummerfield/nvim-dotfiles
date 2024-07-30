@@ -28,3 +28,6 @@ vim.keymap.set('n', '<leader>c', ':bd<CR>', { desc = 'Close Buffer', noremap = t
 vim.keymap.set('n', '<leader>W', ':w!<CR>', { desc = 'Hard Save Buffer', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>Q', ':q!<CR>', { desc = 'Hard Quit', noremap = true, silent = true })
 vim.keymap.set('n', '<leader>C', ':bd!<CR>', { desc = 'Hard Close Buffer', noremap = true, silent = true })
+
+-- Unbind the S key
+vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
